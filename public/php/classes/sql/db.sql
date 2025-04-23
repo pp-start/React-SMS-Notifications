@@ -7,6 +7,7 @@ CREATE TABLE `users_mail` (
   `email` varchar(128) NOT NULL,
   `password` varchar(512) NOT NULL,
   `role` varchar(8) NOT NULL,
+  `verified` tinyint(1) NOT NULL,
   `phone_number` varchar(9) DEFAULT NULL,
   `created_on` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
@@ -14,7 +15,7 @@ CREATE TABLE `users_mail` (
 
 LOCK TABLES `users_mail` WRITE;
 
-INSERT INTO `users_mail` VALUES (1,'U001','admin','mail@mail.com','$2y$10$BG4S71KXVfLOw0T11TN3Ke8.WyE9Fmg7BKZ9e6lFoODzfCBgPP.BO','admin',NULL,'2025-01-31 12:18:50');
+INSERT INTO `users_mail` VALUES (1,'U001','admin','mail@mail.com','$2y$10$BG4S71KXVfLOw0T11TN3Ke8.WyE9Fmg7BKZ9e6lFoODzfCBgPP.BO','admin',1,NULL,'2025-01-31 12:18:50');
 
 UNLOCK TABLES;
 
@@ -31,7 +32,7 @@ CREATE TABLE `users_phone` (
   `otp_time` datetime DEFAULT NULL,
   `created_on` timestamp NOT NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=cp1250 COLLATE=cp1250_polish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=cp1250 COLLATE=cp1250_polish_ci;
 
 LOCK TABLES `users_phone` WRITE;
 

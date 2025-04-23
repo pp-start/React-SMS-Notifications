@@ -91,9 +91,9 @@ class Notification {
 
         $response = array();
 
-        $project_id = 'pp-start-451410';
+        $project_id = 'YOUR_FIREBASE_PROJECT_ID'; // TO CHANGE
 
-        putenv('GOOGLE_APPLICATION_CREDENTIALS=config/pp-start-451410.json');
+        putenv('GOOGLE_APPLICATION_CREDENTIALS=config/your_firebase_credentials.json'); // TO CHANGE
 
         // Authenticate with Google OAuth 2.0
 

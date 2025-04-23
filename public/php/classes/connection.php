@@ -4,7 +4,7 @@ trait Connection{
 
     public function connect(){
 
-        $config = parse_ini_file("config/config.ini");
+        $config = parse_ini_file(__DIR__."/config/config.ini");
 
         $host = $config['host'];
         
