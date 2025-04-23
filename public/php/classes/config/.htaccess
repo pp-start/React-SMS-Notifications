@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Enter username and password"
+AuthUserFile public_html/php/config/.htpass
+require valid-user
