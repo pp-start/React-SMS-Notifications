@@ -44,7 +44,37 @@ class Login {
 
         if(($this->dbh instanceof PDO)){
 
-            return true;
+            $tables = ['users_mail', 'users_phone'];
+
+            $error = 0;
+
+            foreach($tables as $table){
+
+                $stmt = $this->dbh->prepare("SHOW TABLES LIKE :table");
+
+                $stmt->execute([':table' => $table]);
+
+                if($stmt->rowCount() === 0){
+
+                    $error++;
+
+                }
+
+            }
+
+            if($error > 0){
+
+                $response = array("message" => "Tables not found in Database");
+
+                echo json_encode($response);
+
+                return false;
+
+            } else {
+
+                return true;
+
+            }
 
         } else {
 
