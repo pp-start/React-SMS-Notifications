@@ -35,6 +35,37 @@ npm install
 cd public/php
 composer install
 ```
+
+### MySQL database setup
+
+```sql
+CREATE TABLE `users_mail` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(8) NOT NULL,
+  `username` varchar(64) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `password` varchar(512) NOT NULL,
+  `role` varchar(8) NOT NULL,
+  `verified` tinyint(1) NOT NULL,
+  `phone_number` varchar(9) DEFAULT NULL,
+  `created_on` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB
+
+CREATE TABLE `users_phone` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` varchar(8) NOT NULL,
+  `phone_number` varchar(9) NOT NULL,
+  `email` varchar(128) DEFAULT NULL,
+  `firebase_token` varchar(512) DEFAULT NULL,
+  `verification_code` varchar(6) DEFAULT NULL,
+  `one_time_password` varchar(6) DEFAULT NULL,
+  `otp_time` datetime DEFAULT NULL,
+  `created_on` timestamp NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB
+```
+
 ### 💻 Running the App
 
 ```bash
