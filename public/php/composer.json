@@ -1,0 +1,6 @@
+{
+    "require": {
+        "firebase/php-jwt": "^6.11",
+        "google/auth": "^1.47"
+    }
+}
